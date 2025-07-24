@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Svitlo-Map | Offline Safety & Aid Navigator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* Dark Gray */
+            color: #F3F4F6; /* Light Gray */
+        }
+        .hero-section {
+            background: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 1)), url('https://placehold.co/1920x1080/1a202c/3c3c3c?text=Abstract+Map') no-repeat center center;
+            background-size: cover;
+        }
+        .highlight-text {
+            color: #FBBF24; /* Amber-400 */
+        }
+        .section-title {
+            font-weight: 900;
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: #9CA3AF; /* Gray-400 */
+        }
+        .card {
+            background-color: #1F2937; /* Gray-800 */
+            border: 1px solid #374151; /* Gray-700 */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(251, 191, 36, 0.1), 0 4px 6px -2px rgba(251, 191, 36, 0.05);
+        }
+        .btn-primary {
+            background-color: #FBBF24;
+            color: #111827;
+            font-weight: 700;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #F59E0B; /* Amber-500 */
+        }
+        .icon-bg {
+            background-color: rgba(251, 191, 36, 0.1);
+            color: #FBBF24;
+        }
+        /* Scroll reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="fixed w-full bg-gray-900/80 backdrop-blur-sm z-50 border-b border-gray-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold tracking-tight">Svitlo<span class="highlight-text">-Map</span></h1>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#problem" class="hover:text-amber-400 transition-colors">The Problem</a>
+                <a href="#solution" class="hover:text-amber-400 transition-colors">Our Solution</a>
+                <a href="#features" class="hover:text-amber-400 transition-colors">Features</a>
+                <a href="#contact" class="hover:text-amber-400 transition-colors">Partnerships</a>
+            </nav>
+            <a href="#contact" class="btn-primary px-5 py-2 rounded-lg hidden md:inline-block">Get Involved</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+        <section class="hero-section min-h-screen flex items-center pt-20">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-7xl font-black uppercase tracking-wider reveal">Svitlo-Map</h1>
+                <p class="text-xl md:text-3xl mt-4 font-semibold highlight-text reveal" style="transition-delay: 100ms;">Stay Safe. Find Help. Even Offline.</p>
+                <p class="max-w-3xl mx-auto mt-6 text-lg md:text-xl text-gray-300 reveal" style="transition-delay: 200ms;">
+                    A humanitarian-first mobile app designed to protect civilians during war and disaster by providing access to verified, life-saving information—even without an internet connection.
+                </p>
+                <div class="mt-10 reveal" style="transition-delay: 300ms;">
+                    <a href="#solution" class="btn-primary text-lg px-8 py-4 rounded-lg">Discover How It Works</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Problem Section -->
+        <section id="problem" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="section-title reveal">The Lifeline, Severed.</h2>
+                    <p class="section-subtitle mt-4 reveal" style="transition-delay: 100ms;">
+                        In conflict zones, infrastructure collapses. Internet access vanishes. Millions are left disconnected from the critical information they need to survive. Existing digital aids fail when they're needed most.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 mt-16">
+                    <!-- Problem Card 1 -->
+                    <div class="card p-8 rounded-lg text-center reveal">
+                        <div class="icon-bg w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636a9 9 0 010 12.728m-12.728 0a9 9 0 010-12.728m12.728 0L5.636 18.364m12.728 0L5.636 5.636"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Blackout Failure</h3>
+                        <p class="text-gray-400">Most apps are useless without internet, leaving civilians in an information vacuum during power outages and network cuts.</p>
+                    </div>
+                    <!-- Problem Card 2 -->
+                    <div class="card p-8 rounded-lg text-center reveal" style="transition-delay: 150ms;">
+                        <div class="icon-bg w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Unverified Information</h3>
+                        <p class="text-gray-400">Crisis breeds misinformation. Unreliable data on shelters or aid can lead people into greater danger.</p>
+                    </div>
+                    <!-- Problem Card 3 -->
+                    <div class="card p-8 rounded-lg text-center reveal" style="transition-delay: 300ms;">
+                        <div class="icon-bg w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Fragmented & Complex</h3>
+                        <p class="text-gray-400">Users need multiple apps for alerts, maps, and aid info. In a crisis, simplicity and an all-in-one solution are vital.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Solution Section -->
+        <section id="solution" class="py-20 md:py-32 bg-gray-900">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="section-title reveal">Svitlo-Map: A Lifeline, Restored.</h2>
+                    <p class="section-subtitle mt-4 reveal" style="transition-delay: 100ms;">
+                        We provide a single, reliable platform that works when nothing else does. We combine offline maps, verified aid data, and danger-aware navigation into one accessible, life-saving tool.
+                    </p>
+                </div>
+                <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Solution Feature 1 -->
+                    <div class="card p-6 rounded-lg reveal">
+                        <div class="icon-bg w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <h3 class="text-lg font-bold">Offline-First Design</h3>
+                        <p class="text-gray-400 mt-2">Downloadable maps and critical data ensure the app is fully functional without an internet connection.</p>
+                    </div>
+                    <!-- Solution Feature 2 -->
+                    <div class="card p-6 rounded-lg reveal" style="transition-delay: 150ms;">
+                        <div class="icon-bg w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <h3 class="text-lg font-bold">Verified Aid Directory</h3>
+                        <p class="text-gray-400 mt-2">Crowdsourced data is verified by NGO partners, providing reliable locations for food, water, shelter, and medicine.</p>
+                    </div>
+                    <!-- Solution Feature 3 -->
+                    <div class="card p-6 rounded-lg reveal" style="transition-delay: 300ms;">
+                        <div class="icon-bg w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 16.382V5.618a1 1 0 00-1.447-.894L15 7m-6 13v- hükümetler6m6 10V7"></path></svg>
+                        </div>
+                        <h3 class="text-lg font-bold">Danger-Aware Routing</h3>
+                        <p class="text-gray-400 mt-2">GPS-based navigation actively guides users away from reported danger zones to find the safest path.</p>
+                    </div>
+                    <!-- Solution Feature 4 -->
+                    <div class="card p-6 rounded-lg reveal" style="transition-delay: 450ms;">
+                        <div class="icon-bg w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <h3 class="text-lg font-bold">Emergency SOS</h3>
+                        <p class="text-gray-400 mt-2">A one-tap SOS button sends location data to NGO responders, with an SMS fallback for when networks are down.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Features Section -->
+        <section id="features" class="py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="section-title reveal">All-in-One Crisis Response</h2>
+                    <p class="section-subtitle mt-4 reveal" style="transition-delay: 100ms;">
+                        Svitlo-Map integrates essential services into a single, accessible interface, designed for clarity and ease of use in high-stress situations.
+                    </p>
+                </div>
+                <div class="max-w-5xl mx-auto mt-16 grid md:grid-cols-2 gap-x-12 gap-y-10">
+                    <!-- Feature Item -->
+                    <div class="flex items-start space-x-4 reveal">
+                        <div class="icon-bg flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center">✓</div>
+                        <div>
+                            <h4 class="font-bold text-lg">Accessible to All</h4>
+                            <p class="text-gray-400">Features like voice support, large fonts, and an icon-driven UI ensure the app is usable by the elderly, disabled, and digitally excluded.</p>
+                        </div>
+                    </div>
+                    <!-- Feature Item -->
+                    <div class="flex items-start space-x-4 reveal">
+                        <div class="icon-bg flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center">✓</div>
+                        <div>
+                            <h4 class="font-bold text-lg">Community Status Updates</h4>
+                            <p class="text-gray-400">Users can report on local conditions, with all information vetted by partner organizations to ensure accuracy and prevent misinformation.</p>
+                        </div>
+                    </div>
+                    <!-- Feature Item -->
+                    <div class="flex items-start space-x-4 reveal">
+                        <div class="icon-bg flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center">✓</div>
+                        <div>
+                            <h4 class="font-bold text-lg">Role-Based Access</h4>
+                            <p class="text-gray-400">Separate interfaces for civilians, volunteers, and admins streamline the experience and protect sensitive data.</p>
+                        </div>
+                    </div>
+                    <!-- Feature Item -->
+                    <div class="flex items-start space-x-4 reveal">
+                        <div class="icon-bg flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center">✓</div>
+                        <div>
+                            <h4 class="font-bold text-lg">Scalable & Ethical Model</h4>
+                            <p class="text-gray-400">Built for humanitarian impact, with a sustainable monetization model through partnerships, licensing, and grants.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Monetization/Partnership Section -->
+        <section id="contact" class="py-20 md:py-32 bg-gray-900">
+            <div class="container mx-auto px-6 text-center">
+                 <div class="text-center max-w-3xl mx-auto">
+                    <h2 class="section-title reveal">Partner With Us to Save Lives</h2>
+                    <p class="section-subtitle mt-4 reveal" style="transition-delay: 100ms;">
+                        Svitlo-Map is built on collaboration. We are seeking partnerships with NGOs, government agencies, and humanitarian organizations to deploy our technology where it's needed most.
+                    </p>
+                </div>
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto text-left">
+                    <div class="card p-6 rounded-lg reveal">
+                        <h4 class="font-bold text-lg highlight-text">NGO & Government Contracts</h4>
+                        <p class="text-gray-400 mt-2">Paid deployments, dedicated platform access, and on-the-ground support for your teams.</p>
+                    </div>
+                    <div class="card p-6 rounded-lg reveal" style="transition-delay: 150ms;">
+                        <h4 class="font-bold text-lg highlight-text">White-Label Licensing</h4>
+                        <p class="text-gray-400 mt-2">Adapt and deploy the Svitlo-Map platform in other crisis-impacted regions around the world.</p>
+                    </div>
+                    <div class="card p-6 rounded-lg reveal" style="transition-delay: 300ms;">
+                        <h4 class="font-bold text-lg highlight-text">Crisis Analytics</h4>
+                        <p class="text-gray-400 mt-2">Access anonymized data dashboards to better understand movement, aid gaps, and resource needs.</p>
+                    </div>
+                </div>
+                <div class="mt-12 reveal" style="transition-delay: 400ms;">
+                    <a href="mailto:partnerships@svitlomap.org" class="btn-primary text-lg px-8 py-4 rounded-lg">Contact for Partnership</a>
+                    <p class="text-gray-400 mt-4 text-sm">Or reach out directly at <a href="mailto:partnerships@svitlomap.org" class="underline hover:text-amber-400">partnerships@svitlomap.org</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-400">
+            <p>&copy; 2025 Svitlo-Map. A humanitarian initiative. All rights reserved.</p>
+            <p class="mt-2 text-sm">Built with purpose, for a safer tomorrow.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple scroll reveal animation
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            revealElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 50) { // 50px buffer
+                    el.classList.add('visible');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        // Trigger on load as well
+        document.addEventListener('DOMContentLoaded', revealOnScroll);
+    </script>
+</body>
+</html>
